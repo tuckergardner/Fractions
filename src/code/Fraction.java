@@ -6,8 +6,16 @@ public class Fraction
 
     public Fraction(int num, int denom)
     {
-        this.num = num;
-        this.denom = denom;
+        if (denom == 0)
+        {
+          throw new IllegalArgumentException() ;
+        }
+        else
+        {
+            this.num = num;
+            this.denom = denom;
+            simplify();
+        }
     }
 
 
@@ -32,5 +40,32 @@ public class Fraction
     {
         return new Fraction(num*f.num, denom*f.denom);
     }
+    public Fraction divide(Fraction f)
+    {
+        return new Fraction(num*f.denom, denom*f.num);
+    }
+    public static int gcf(int a, int b)
+    {
+        int min = Math.min(a,b);
+        for (int i = min; i>0; i--)
+        {
+            if ( a%i == 0 && b % i ==0) return i;
+        }
+        return 1;
+    }
+   private void simplify()
+    {
+        int min = Math.min(num,denom);
+        for (int i = min; i > 0; i--)
+        {
+            if ( num%i == 0 && denom%i ==0)
+            {
+                num /=i;
+                denom/=i;
+                return;
+            }
+        }
+    }
+
 }
 // hello
