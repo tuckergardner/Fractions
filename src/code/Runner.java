@@ -12,20 +12,25 @@ public static void main(String[] args)
  Fraction multiplied = myFraction.multiply(otherFraction);
  System.out.println(multiplied);
 
-}
- {
-  Fraction f1 = null;
-  try
- {
-   f1 = new Fraction(3,0);
- }
- catch (Exception e)
- {
-  System.out.println("fractions need a non 0 denominator");
- }
+    System.out.println(Fraction.lcm(7,5));
+    {
 
- }
- Fraction  thatFraction = new Fraction(12, 4);
-//System.out.println(thatFraction);
+        Fraction f1 = null;
+        try
+        {
+            f1 = new Fraction(3,0);
+        }
+        catch (Exception e)
+        {
+            System.out.println("fractions need a non 0 denominator");
+        }
+
+    }
+    Fraction  thatFraction = new Fraction(12, 4);
+    System.out.println(thatFraction);
+
+}
+
+
 
 }

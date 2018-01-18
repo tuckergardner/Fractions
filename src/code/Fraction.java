@@ -44,6 +44,8 @@ public class Fraction
     {
         return new Fraction(num*f.denom, denom*f.num);
     }
+
+
     public static int gcf(int a, int b)
     {
         int min = Math.min(a,b);
@@ -53,6 +55,20 @@ public class Fraction
         }
         return 1;
     }
+
+    public static int lcm(int a, int b)
+    {
+        int mult = Math.max(a,b);
+
+        while (mult % a != 0 || mult % b != 0)
+        {
+            mult += Math.max(a,b);
+        }
+
+        return mult;
+    }
+
+
    private void simplify()
     {
         int min = Math.min(num,denom);
